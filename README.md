@@ -49,7 +49,7 @@ processChangefeed(newTasksFeed, handleNewTask, handleError, {
 })
 
 function newTasksFeed() {
-  r.table('tasks')
+  return r.table('tasks')
     .changes()
     .filter(r.row('old_val').eq(null))
 }
